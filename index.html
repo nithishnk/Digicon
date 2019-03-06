@@ -1,0 +1,51 @@
+<?php
+$username=$_POST['username'];
+$password=$_POST['password'];
+$error="";
+$success="";
+if(isset($_POST['submit']))
+{
+if ($username == "admin")
+{
+	if ($password == "admin")
+	{
+		$error="";
+		$success="Welcome admin";
+        header("location:home.html");
+	}
+	else 
+	{
+		$error="Invalid Username";
+		$success="";
+	}
+}
+if($success==true)
+{
+	header("location:home.html");
+}
+?>
+
+<html>
+<head>
+<title>Login Form Design</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+    <div class="loginbox">
+    <img src="avatar.png" class="avatar">
+        <h1>Login Here</h1>
+        <form action="index.html" method="post" >
+            <p>Username</p>
+            <input type="text" name="" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password">
+            <input type="submit" name="" value="Login">
+            
+        </form>
+        
+    </div>
+
+</body>
+</head>
+</html>
